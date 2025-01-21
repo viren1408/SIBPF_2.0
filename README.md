@@ -1,5 +1,5 @@
 # SIBPF_2.0
-The current code identifies steep-spectrum radio sources in an image. It then cross-matches these sources with the TGSS (TIFR GMRT Sky Survey) and NVSS (National Radio Astronomy Observatory's VLA Sky Survey) catalogs to determine their spectral index. The script calculates spectral indices for matched sources and identifies potential pulsar candidates. The current version has been tailored for radio images from GMRT at 320 MHz. 
+Spectral Index Based Pulsar Finder , identifies steep-spectrum radio sources in an image. It then cross-matches these sources with the TGSS (TIFR GMRT Sky Survey) and NVSS (National Radio Astronomy Observatory's VLA Sky Survey) catalogs to determine their spectral index. The script calculates spectral indices for matched sources and identifies potential pulsar candidates. The current version has been tailored for radio images from GMRT at 320 MHz. 
 The new version of the code is designed to be more flexible, with improvements allowing it to handle a wider range of data, frequency bands, and source characteristics, making it adaptable for future use across various surveys and radio frequencies. 
 
 ## Requirements
