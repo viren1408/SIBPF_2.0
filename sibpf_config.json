@@ -1,0 +1,12 @@
+{
+  "dir": "./SIBPF_trial",
+  "region": "G033.0-5.0",
+  "image": "./SIBPF_trial/G033.0-5.0-selfcalimg4.fits",
+  "spidx": "/home/viren/work/DATA/Spectral_Analysis/G031.0-5.0/spidxcat_v1.1b.fits",
+  "tgss": "/home/viren/work/DATA/Spectral_Analysis/G031.0-5.0/TGSSADR1_7sigma_catalog.tsv",
+  "spec_index_constr": -0.9,
+  "show_matches": true,
+  "get_spectral_index": true,
+  "get_candidates": true,
+  "get_pulsars": true
+}
