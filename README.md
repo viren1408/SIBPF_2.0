@@ -43,16 +43,7 @@ The script provides the following functionalities:
 - Calculates spectral indices for the matched sources using TGSS and NVSS flux data.
 - Produces histogram of the spectral index of the matched sources. 
 - Identifies potential pulsar candidates based on a spectral index threshold and these candidates are saved to a separate file. 
-
-### Image Inverter(Experimental) 
-
-- The Image inverter code is included which allows the user to find artifacts that may have been detected by pybdsf as true sources
-- The code creates an inverted image and then runs pybdsf on the image to locate any strong artifact usually around strong sources.
-- This can be done before the crossmatching to check if any of the artifacts are confused as true sources and are crossmatched because of their proximity to the true source. 
-
-### Variability (experimental)
-- An experimental variability code is being worked on to check the variability of the pulsar candidates. Pulsars show a variability with time and this can be used to constrain the candidates further. 
-
+ 
 ### Output
 
 The script generates the following outputs:
