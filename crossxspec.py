@@ -222,6 +222,11 @@ def sibpf(dir, region, file_path_image, file_path_spidx, spec_index_constr, file
         print(f"'The spectral index constraint for selecting candidates is set to {spec_index_constr}: {spec_index_constr})")
 
     	#print(f: {spec_index_constr}')
+        # TO DO :
+        # How to deal with large error bars spectral index values?
+        # Give a warning if the error bar is unusually high for a candidate.
+        # If other error bars are low, what would the high error bar indicate ? > Should we try a different fit if not linear? 
+        # Warn the user if the majority of the spectral index values have an unusually large error bar, which currently can be diagnosed using the candidate image 
 
         pulsar_candidates = spectral_index[spectral_index['Spectral_index'] < spec_index_constr]
         
@@ -232,8 +237,8 @@ def sibpf(dir, region, file_path_image, file_path_spidx, spec_index_constr, file
         plt.scatter(spectral_index['Sr.no'],spectral_index['Spectral_index'],marker = '.')
         plt.scatter(pulsar_candidates['Sr.no'],pulsar_candidates['Spectral_index'],s=50, linewidth=0.5, alpha=0.7,color='r',label = 'Selected_candidates')
         plt.errorbar(spectral_index['Sr.no'],spectral_index['Spectral_index'],yerr =spectral_index['E_Spectral_index'],alpha=0.7,ecolor='black',capsize=2,ls = 'none')
-        plt.axhline(y=-0.9, color='b', linestyle='--', label='Spectral index = -0.9')
-        plt.axhspan(ymin=spectral_index['Spectral_index'].min(), ymax=-0.9, alpha=0.3, color='g', label='Spectral index < -0.9')
+        plt.axhline(y=spec_index_constr, color='b', linestyle='--', label=f'Spectral index = {spec_index_constr}')
+        plt.axhspan(ymin=spectral_index['Spectral_index'].min(), ymax=-0.9, alpha=0.3, color='g', label=f'Spectral index < {spec_index_constr}')
         plt.legend()
         plt.grid()
 
@@ -247,10 +252,10 @@ def sibpf(dir, region, file_path_image, file_path_spidx, spec_index_constr, file
 
         ax_1 = spectral_index.hist(column='Spectral_index', bins='auto', grid=True, figsize=(12,8), color='#86bf91')
 
-        plt.axvline(x=-0.9, color='b', linestyle='--', label='Spectral index = -0.9')
+        plt.axvline(x={spec_index_constr}, color='b', linestyle='--', label=f'Spectral index = {spec_index_constr}')
 
 
-        plt.axvspan(xmin=spectral_index['Spectral_index'].min(), xmax=-0.9, alpha=0.3, color='r', label='Spectral index < -0.9')
+        plt.axvspan(xmin=spectral_index['Spectral_index'].min(), xmax=spec_index_constr, alpha=0.3, color='r', label=f'Spectral index < {spec_index_constr}')
 
 
         plt.title('Spectral Index Distribution')
@@ -267,10 +272,10 @@ def sibpf(dir, region, file_path_image, file_path_spidx, spec_index_constr, file
 
         ax_2 = spectral_index.hist(column='Spidx', bins='auto', grid=True, figsize=(12,8), color='#86bf91') #smooth green 
 
-        plt.axvline(x=-0.9, color='b', linestyle='--', label='Spectral index = -0.9') #updated for the new pulsar list (This needs to be updated to get the user to select the contraint !) 
+        plt.axvline(x={spec_index_constr}, color='b', linestyle='--', label=f'Spectral index = {spec_index_constr}') #updated for the new pulsar list (This needs to be updated to get the user to select the contraint !) 
 
 
-        plt.axvspan(xmin=spectral_index['Spidx'].min(), xmax=-0.9, alpha=0.3, color='r', label='Spectral index < -0.9')
+        plt.axvspan(xmin=spectral_index['Spidx'].min(), xmax={spec_index_constr}, alpha=0.3, color='r', label=f'Spectral index < {spec_index_constr}')
 
 
         plt.title('Spectral Index Distribution of SPIDX')
