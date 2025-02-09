@@ -178,7 +178,7 @@ def sibpf(dir, region, file_path_image, file_path_spidx, spec_index_constr, file
 
     if do_pbcorr == True :
 
-        print('Primary beam correction is being applied /n Caution! : The correction is only valid for GSB band 2 at GMRT')
+        print('Primary beam correction is being applied /n Caution! : The correction is only valid for GSB band 3 at GMRT')
 
         observed_sources = apply_primary_beam_correction(observed_sources, ref_ra, ref_dec)
 
